@@ -20,9 +20,9 @@ Feedhaven is a platform for storing and editing data in a generalized feed forma
 The main structure of Feedhaven encompasses feeds and entries.  One feed has many entries, and each entry belongs to one feed.  All data is stored on MongoDB.
 
 ### Feed
-{ id (generated) : The unique identifier for the object
-  Title (required) : The title of the feed
-  Subtitle : Extra information about the feed
+{ id (generated) : The unique identifier for the object  
+  Title (required) : The title of the feed  
+  Subtitle : Extra information about the feed  
   Source : A link of the website where the content is pulled from. In the case where this is ambiguous, please provide a description  
   Rights : The rights pertaining the public permission to use contents of this feed 
   Tags : Tags for the feed  
@@ -33,10 +33,10 @@ The main structure of Feedhaven encompasses feeds and entries.  One feed has man
   Created_at (Not Editable) : The time when the feed element was created  
   Dump : A hash for any additional key values  
   author :  
-            { name : Author Name 
-              email : Author Email 
-              uri : Author Uri
-              }
+            { name : Author Name  
+              email : Author Email  
+              uri : Author Uri  
+              }  
 }
 
 ### Entry
@@ -48,10 +48,10 @@ The main structure of Feedhaven encompasses feeds and entries.  One feed has man
   Updated : The time the entry was most recently edited  
   Dump : A hash with any additional key values  
   author :  
-            { name : Author Name (if different from feed)  
-              email : Author Email (if different from feed) 
-              uri : Author Uri (if different from feed)
-              }
+            { name : Author Name (if different from feed)   
+              email : Author Email (if different from feed)  
+              uri : Author Uri (if different from feed)  
+              }  
 }
   
 ## License
