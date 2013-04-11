@@ -27,9 +27,10 @@ codebase is lacking in tests and polish.
 ### Apps that can import data to Feedhaven
 Feedhaven has a very simple REST JSON API.  In order to import data to
 Feedhaven, first create a feed on Feedhaven, then post entries to that
-feed in the proper format.  Two existing applications that do that are:
+feed in the proper format.  Two existing applications that can do that are:
 * [Huginn](https://github.com/cantino/huginn)
-* [Zapier](https://zapier.com/)
+* [Zapier](https://zapier.com/)  
+  
 We encourage you to either extend Huginn or write other apps to pull
 more data to Feedhaven.
 
