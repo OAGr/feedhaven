@@ -17,6 +17,8 @@ gem 'pry-nav'
 gem 'active_model_serializers'
 gem 'bson_ext'
 gem 'rails_autolink'
+gem 'gemnasium'
+gem 'figaro'
 
 # Gems used only for assets and not required
 # in production environments by default.

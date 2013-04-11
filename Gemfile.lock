@@ -48,6 +48,10 @@ GEM
     excon (0.16.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    figaro (0.6.3)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
+    gemnasium (1.0.1)
     heroku (2.33.0)
       heroku-api (~> 0.3.5)
       launchy (>= 0.3.2)
@@ -154,6 +158,8 @@ DEPENDENCIES
   active_model_serializers
   bson_ext
   coffee-rails (~> 3.2.1)
+  figaro
+  gemnasium
   heroku
   jquery-rails
   json

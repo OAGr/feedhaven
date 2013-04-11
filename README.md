@@ -104,3 +104,7 @@ Feedhaven is provided under the MIT License.
 
 
 [![Build Status](https://travis-ci.org/OAGr/feedhaven.png)](https://travis-ci.org/OAGr/feedhaven)
+
+[![Dependency Status](https://gemnasium.com/OAGr/feedhaven.png)](https://gemnasium.com/OAGr/feedhaven)
+
+[![Code Climate](https://codeclimate.com/github/OAGr/feedhaven.png)](https://codeclimate.com/github/OAGr/feedhaven)

@@ -3,7 +3,7 @@ development:
   sessions:
     # Defines the default session. (required)
     default:
-      uri: ENV[DevMongo]
+      uri: <%= ENV['MONGOHQ_URL'] %>
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       #database: feeds_development_new
@@ -83,5 +83,5 @@ test:
 production:
   sessions:
     default:
-      uri: ENV['MONGOHQ_STRING']
+      uri: <%= ENV['MONGOHQ_URL'] %>
 
