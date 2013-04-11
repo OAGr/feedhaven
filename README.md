@@ -1,5 +1,5 @@
 # Feedhaven.  Liberate your data.
-![revolution](doc/imgs/revolution_wide.png)
+![revolution](doc/images/revolution_wide.png)
 ## What is Feedhaven?
 
 Feedhaven is a platform for storing and editing data in a generalized feed format.  Feedhaven is meant to be used in combination with other tools to import and export data from other applicaitons.  We suggest that you use Feedhaven to store most data that you care about on the internet, in order to keep forever and use easily for any purpose you choose.
