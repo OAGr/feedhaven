@@ -11,7 +11,7 @@ Feedhaven is currently in development mode and has not yet reached
 alpha.  We encourage you to take a look, but keep in mind that the
 codebase is lacking in tests and polish.
 
-
+![screenshot](doc/images/screenshot-feed.png)
 ### Recommended feeds to import to Feedhaven
 * Emails
 * RSS Feeds
