@@ -1,17 +1,21 @@
 # Feedhaven.  Liberate your data.
 Most online data is behind the walls of big applications that don't play
 well with others.  Use Feedhaven to take your data and store it in a way
-that's completely accessible to you.   
+that's completely accessible to you.  
+   
 ![revolution](doc/images/revolution_wide.png)
 ## What is Feedhaven?
 
 Feedhaven is a platform for storing and editing data in a generalized feed format.  Feedhaven is meant to be used in combination with other tools to import and export data from other applicaitons.  We suggest that you use Feedhaven to store most data that you care about on the internet, in order to keep forever and use easily for any purpose you choose.  
+
+### Screenshot (Feed page)  
+![screenshot](doc/images/screenshot-feed.png)
   
 Feedhaven is currently in development mode and has not yet reached
 alpha.  We encourage you to take a look, but keep in mind that the
 codebase is lacking in tests and polish.
 
-![screenshot](doc/images/screenshot-feed.png)
+
 ### Recommended feeds to import to Feedhaven
 * Emails
 * RSS Feeds
