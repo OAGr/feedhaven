@@ -83,5 +83,5 @@ test:
 production:
   sessions:
     default:
-      uri: ENV[PubMongo]
+      uri: ENV['MONGOHQ_STRING']
 

@@ -101,3 +101,6 @@ The main structure of Feedhaven encompasses feeds and entries.  One feed has man
 
 ## License
 Feedhaven is provided under the MIT License.
+
+
+[![Build Status](https://travis-ci.org/OAGr/feedhaven.png)](https://travis-ci.org/OAGr/feedhaven)
