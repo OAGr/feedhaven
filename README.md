@@ -1,8 +1,16 @@
 # Feedhaven.  Liberate your data.
-![revolution](doc/images/revolution_wide.png)
+Most online data is behind the walls of big applications that don't play
+well with others.  Use Feedhaven to take your data and store it in a way
+that's completely accessible to you
+![revolution](doc/imgs/revolution_wide.png)
 ## What is Feedhaven?
 
-Feedhaven is a platform for storing and editing data in a generalized feed format.  Feedhaven is meant to be used in combination with other tools to import and export data from other applicaitons.  We suggest that you use Feedhaven to store most data that you care about on the internet, in order to keep forever and use easily for any purpose you choose.
+Feedhaven is a platform for storing and editing data in a generalized feed format.  Feedhaven is meant to be used in combination with other tools to import and export data from other applicaitons.  We suggest that you use Feedhaven to store most data that you care about on the internet, in order to keep forever and use easily for any purpose you choose.  
+  
+Feedhaven is currently in development mode and has not yet reached
+alpha.  We encourage you to take a look, but keep in mind that the
+codebase is lacking in tests and polish.
+
 
 ### Recommended feeds to import to Feedhaven
 * Emails
@@ -64,6 +72,13 @@ data.
 If you sign up for MongoHQ with heroku, linking them is easy.  Just set the relevent ENV to
 the uri mongodb://{username}:{password}@linus.mongohq.com:{port}/app{app
 ID}
+
+## Project Status
+Feedhaven is still in early development.  We expect to reach alpha in the next
+few weeks.  So far the code is functional for importing, holding, and
+accessing data.  However, there are still no tests, no user
+administration, and no data security layers.  Consider the project very
+early stage.
 
 ### Hosted Version
 We are working to provide a paid hosted version directly through
