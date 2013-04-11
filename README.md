@@ -1,7 +1,7 @@
 # Feedhaven.  Liberate your data.
 Most online data is behind the walls of big applications that don't play
 well with others.  Use Feedhaven to take your data and store it in a way
-that's completely accessible to you  
+that's completely accessible to you.   
 ![revolution](doc/images/revolution_wide.png)
 ## What is Feedhaven?
 
