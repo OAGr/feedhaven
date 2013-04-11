@@ -24,6 +24,28 @@ codebase is lacking in tests and polish.
 * ATOM
 * JSON
 
+## Getting Started
+Feedhaven was made to work easily with Heroku.  It does requre a MongoDB
+database.  We recommend MongoHQ or Mongolab to assist with providing a
+hosted MongoDB database.  Both provide free storage for up to 500MB of
+data.
+
+### MongoDB with MongoHQ
+If you sign up for MongoHQ with heroku, linking them is easy.  Just set the relevent ENV to
+the uri mongodb://{username}:{password}@linus.mongohq.com:{port}/app{app
+ID}
+
+### Hosted Version
+We are working to provide a paid hosted version directly through
+FeedHaven shortly.
+
+## Project Status
+Feedhaven is still in early development.  We expect to reach alpha in the next
+few weeks.  So far the code is functional for importing, holding, and
+accessing data.  However, there are still no tests, no user
+administration, and no data security layers.  Consider the project very
+early stage.
+
 ## Feedhaven data structure
 The main structure of Feedhaven encompasses feeds and entries.  One feed has many entries, and each entry belongs to one feed.  All data is stored on MongoDB.
 
@@ -62,27 +84,6 @@ The main structure of Feedhaven encompasses feeds and entries.  One feed has man
               }  
 }
   
-## Getting Started
-Feedhaven was made to work easily with Heroku.  It does requre a MongoDB
-database.  We recommend MongoHQ or Mongolab to assist with providing a
-hosted MongoDB database.  Both provide free storage for up to 500MB of
-data.
-
-### MongoDB with MongoHQ
-If you sign up for MongoHQ with heroku, linking them is easy.  Just set the relevent ENV to
-the uri mongodb://{username}:{password}@linus.mongohq.com:{port}/app{app
-ID}
-
-## Project Status
-Feedhaven is still in early development.  We expect to reach alpha in the next
-few weeks.  So far the code is functional for importing, holding, and
-accessing data.  However, there are still no tests, no user
-administration, and no data security layers.  Consider the project very
-early stage.
-
-### Hosted Version
-We are working to provide a paid hosted version directly through
-FeedHaven shortly.
 
 ## License
 Feedhaven is provided under the MIT License.
