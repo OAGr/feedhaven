@@ -1,0 +1,50 @@
+<% @entries.each do |entry| %>
+  <dl class="dl-horizontal" >
+    <dt><h5>title</h5></dt>
+    <dd><h5><%=entry.title%></h5></dd>
+  <dt>id</dt>
+  <dd><%=entry.id%></dd>
+  <dt>summary</dt>
+  <dd><%=entry.summary%></dd>
+  <dt>link</dt>
+  <dd><%=entry.link%></dd>
+  <dt>content</dt>
+  
+  <dd><%= (entry.content)%></dd>
+  <dt>published</dt>
+  <dd><%=entry.published%></dd>
+  <dt>updated</dt>
+  <dd><%=entry.updated%></dd>
+  <dt>dump</dt>
+  <dd>
+  <% if entry.dump and !entry.dump.empty? %>
+    <table class="table span5 table-bordered" style="margin-left:0px">
+    <% entry.dump.each_pair do |key,value| %>
+      <tr>
+      <td> <strong> <%= key %> </strong> </td>
+      <td> <%= simple_format(value) %> </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+  </dd>
+
+  <dt>author</dt>
+  <dd>
+  <table class="table span5 table-bordered" style="margin-left:0px">
+    <tr>
+      <td> <strong> Name </strong> </td>
+      <td> <%= entry.author.name %> </td>
+    </tr>
+    <tr>
+      <td> <strong> Email<strong> </td>
+          <td> <%= entry.author.email %> </td>
+        </tr>
+        <tr>
+          <td> <strong> Uri <strong> </td>
+              <td> <%= entry.author.uri %> </td>
+            </tr>
+          </table>
+        </dl>
+        <hr>
+      <% end %>

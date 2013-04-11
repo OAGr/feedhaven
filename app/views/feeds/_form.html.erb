@@ -1,0 +1,66 @@
+
+<%= form_for(@feed) do |f| %>
+  <% if @feed.errors.any? %>
+  <div id="error_explanation">
+  <h2><%= pluralize(@feed.errors.count, "error") %> prohibited this feed from being saved:</h2>
+
+  <ul>
+    <% @feed.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+  <% end %>
+
+<div class="row">
+  <div class="span5">
+    <h4>Feed Information</h4>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :subtitle %>
+      <%= f.text_field :subtitle %>
+    </div>
+    <div class="field">
+      <%= f.label :source %>
+      <%= f.text_field :source %>
+    </div>
+    <div class="field">
+      <%= f.label :rights %>
+      <%= f.text_field :rights %>
+    </div>
+    <div class="field">
+      <%= f.label :tags %>
+      <%= f.text_field :tags %>
+    </div>
+    <div class="field">
+      <%= f.label :icon %>
+      <%= f.text_field :icon %>
+    </div>
+  </div>
+  <div class="span4">
+    <h4>Feed Author Information</h4>
+    <%= f.fields_for @feed.author do |p| %>
+      <div class="field">
+      <%= p.label :name %>
+      <%= p.text_field :name %>
+    </div>
+    <div class="field">
+      <%= p.label :email %>
+      <%= p.text_field :email %>
+    </div>
+    <div class="field">
+      <%= p.label :uri %>
+      <%= p.text_field :uri %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<hr>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

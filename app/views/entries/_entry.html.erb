@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="span7">
+    <strong><%= auto_link(simple_format(entry.title)) %></strong>
+  </div>
+  <div class="span1">
+    <%= distance_of_time_in_words(Time.now - entry.published) %>
+  </div>
+  <div class="btn-toolbar" style="float:right; margin:0px">
+    <div class="btn-group">
+  <%= link_to feed_entry_path(entry.feed_id, entry), :class => "btn btn-mini" do %>
+    <i class="icon-info-sign"></i>
+<% end %>
+      <%= link_to edit_feed_entry_path(entry.feed_id, entry), :class => "btn btn-mini" do %>
+        <i class="icon-pencil"></i>
+    <% end %>
+      <%= link_to feed_entry_path(entry.feed_id,entry), :class => "btn btn-mini btn-danger", :method => :delete, data: {confirm: "This will delete the entry.  Are you sure you want to do this?"} do %>
+        <i class="icon-remove"></i>
+    <% end %>
+  </div>
+  </div>
+</div>
+<hr style="margin:8px 0px">
+

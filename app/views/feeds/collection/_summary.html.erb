@@ -1,0 +1,17 @@
+<% @feeds.each do |feed| %>
+  <div class="row">
+  <div class="span1">
+    <img src="<%= feed.icon %>" class="media-object">
+  </div>
+  <div class="span6">
+    <h4> <%= link_to feed.title, feed %> </h4>
+    <p> <%= feed.subtitle %></p>
+    <p> <%= "#{feed.entries.count} entries" %></p>
+  </div>
+  <div class="span2">
+    <%= distance_of_time_in_words(Time.now - feed.updated) %>
+  </div>
+</div>
+<hr style="margin:8px 0">
+<% end %>
+

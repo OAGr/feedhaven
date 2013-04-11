@@ -1,0 +1,67 @@
+<h3><i class="icon-globe"></i>  Entry Table </h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>_id</td>
+    <td><%= @entry.id %></td>
+  </tr>
+  <tr>
+    <td>Title (required) </td>
+    <td><%= @entry.title %></td>
+  </tr>
+  <tr>
+    <td>Summary</td>
+    <td><%= @entry.summary %></td>
+  </tr>
+  <tr>
+    <td>link</td>
+    <td><%= @entry.link %></td>
+  </tr>
+  <tr>
+    <td>Content</td>
+    <td><%= @entry.content %></td>
+  </tr>
+  <tr>
+    <td>Published</td>
+    <td><%= @entry.published %></td>
+  </tr>
+  <tr>
+    <td>Updated</td>
+    <td><%= @entry.updated %></td>
+  </tr>
+    <tr>
+    <td>Dump</td>
+    <td><%= @entry.dump %></td>
+  </tr>
+  </tbody>
+</table>
+
+<h3><i class="icon-globe"></i>  Author Table </h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Name</td>
+    <td><%= @entry.author.name %></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= @entry.author.email %></td>
+  </tr>
+  <tr>
+    <td>URI</td>
+    <td><%= @entry.author.uri %></td>
+  </tr>
+  </tbody>
+</table>

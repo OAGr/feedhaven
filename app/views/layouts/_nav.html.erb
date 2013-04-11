@@ -1,0 +1,12 @@
+<ul class="nav nav-pills nav-stacked">
+
+  <li class="nav-header">Recent Feeds</li>
+  <% Feed.order_by(:updated.desc).limit(10).each do |feed| %>
+    <% active = (@feed && (feed.id == @feed.id)) ? 'active' : '.'%>
+  <li class=<%= active %>>
+  <%= link_to raw(feed.title.to_s), feed%>
+  </li>
+<% end %>
+</ul>
+
+

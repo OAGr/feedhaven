@@ -1,0 +1,82 @@
+<h2>REST API: Feed Element</h2>
+<p> A entry element represents the data for a specific entry.  It does not respresent the feed elements.  For the feed elements, go .
+</p>
+
+<h3>Element URI </h3>
+<br>
+<h3>Element Properties </h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>_id</td>
+    <td>The unique identifier for the object </td>
+  </tr>
+  <tr>
+    <td>Title (required) </td>
+    <td>The title of the feed in question. </td>
+  </tr>
+  <tr>
+    <td>Subtitle</td>
+    <td>Extra information about. </td>
+  </tr>
+  <tr>
+    <td>Source</td>
+    <td>A link of the website where the content is pulled from.  In the case where this is ambiguous, please provide a description.</td>
+  </tr>
+  <tr>
+    <td>Rights</td>
+    <td>The rights pertaining the public permission to use contents of this feed.</td>
+  </tr>
+  <tr>
+    <td>Tags</td>
+    <td>Feed Tags</td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td>Feed Categories</td>
+  </tr>
+  <tr>
+    <td>Icon</td>
+    <td>A URL to a picture used to describe this feed.  The picture should be at least 100x100px.</td>
+  </tr>
+  <tr>
+    <td>Updated (Not editable)</td>
+    <td>Most recent time when a feed collection / entry was edited, added, or deleted.  </td>
+  </tr>
+  <tr>
+    <td>Updated_at (Not editable)</td>
+    <td>Most recent time when the feed element itself was edited or created. </td>
+  </tr>
+  <tr>
+  <tr>
+    <td>Created_at (Not Editable)</td>
+    <td>The time when the feed element was created. </td>
+  </tr>
+  </tbody>
+</table>
+
+<a name="get"></a> 
+<h3>Get </h3>
+<p> Get the feed element.  This will only get info on the feed element, not the enries that belong to the feed.  For those, see the entries page.</p>
+<pre>$ curl -G <%=feeds_url%>.json</pre>
+
+<a name="put"></a> 
+<h3>Put </h3>
+<p> Replace the feed element.  This will not effect the entries that belong to the feed. </p>
+<pre>$ curl -X PUT <%=feeds_url%>.json -d "title=awesomefeed&rights=microsoft"  </pre>
+<div class="alert alert-error">
+  This is not actually working, probably should be. 
+</div>
+
+<a name="delete"></a> 
+<h3>Delete</h3>
+<p>Deletes the feed element.</p>
+<pre>$ curl -X DELETE <%=feeds_url%>.json</pre>
+
+

@@ -1,0 +1,27 @@
+<div class="well">
+  <h3><%= link_to raw('<i class="icon-reply"></i>'), feed_path(@feed) %>
+  &nbsp;
+  &nbsp;&nbsp;<i class="icon-info-sign"></i>&nbsp;Feed Information
+    <div class="btn-toolbar" style="float:right; margin:0px">
+      <div class="btn-group" style="margin-top:4px" >
+        <a class="btn tab-default" href="#table" data-toggle="tab" ><i class="icon-table"></i></a>
+        <a class="btn" href="#serializable" data-toggle="tab">{ }</a>
+      </div>
+      <a class="btn" href="#edit" data-toggle="tab"><i class="icon-pencil"></i> Edit</a>
+    </div>
+
+</h3>
+  <div class="tab-content">
+    <div class="tab-pane" id="min">
+    </div>
+    <div class="tab-pane" id="table">
+      <%= render 'feeds/element/table.html.erb' %>
+    </div>
+    <div class="tab-pane" id="serializable">
+      <%= @feed.to_json %>
+    </div>
+    <div class="tab-pane" id="edit">
+      <%= render 'feeds/form.html.erb' %>
+    </div>
+  </div>
+</div>

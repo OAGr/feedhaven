@@ -1,0 +1,8 @@
+  <tr>
+    <td><%= link_to feed.entries.count, feed_entries_path(feed) %></td>
+    <td><%= link_to feed.title, feed %></td>
+    <td><%= feed.subtitle%></td>
+    <td><%= link_to 'element', feed %></td>
+    <td><%= link_to 'collection', feed_entries_path(feed) %></td>
+  </tr>
+

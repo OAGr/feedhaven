@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="span10">
+    <div class="row">
+      <div class="span3">
+        <h4> Feed Info </h4>
+        <%= @feed.source%>
+      </div>
+      <div class="span3">
+        <h4> Feed Entries Info </h4>
+        Count: <%= link_to (@feed.entries.count.to_s + " Entries"), feed_entries_path(@feed) %></br>
+        Most Recent: <%= @feed.updated.strftime("%m/%d/%Y %I:%M%p") %>
+      </div>
+      <div class="span3">
+        <h4> Remixer </h4>
+        <%= @feed.author.name%></br> <%= @feed.author.email%> </br><%= @feed.author.uri %>
+      </div>
+    </div>
+  </div>
+</div>
+
+</br>
+</br>
+<h3><i class="icon-list"></i> Recent Feed Entries </h3>
+</br>
+ <div class="tab-content">
+      <div class="tab-pane" id="table">
+        <%= render 'feeds/element/table.html.erb' %>
+      </div>
+    </div>
+
+<table class="table table-bordered">
+  <tr>
+    <th>published</th>
+    <th>id</th>
+    <th>title</th>
+    <th>summary</th>
+    <th>link</th>
+    <th>content</th>
+    <th>author</th>
+  </tr>
+
+  <%@entries.each do |entry| %>
+    <tr>
+    <td><%= entry.published.strftime("%m/%d/%Y %I:%M%p")  %></td>
+    <td><%= link_to entry.id, feed_entry_path(entry.feed_id,entry) %></td>
+    <td><%= entry.title %></td>
+    <td><%= entry.summary %></td>
+    <td><%= entry.link %></td>
+    <td><%= entry.content %></td>
+    <td><%= entry.author.name %></td>
+    <td>
+      <% unless entry.published === entry.updated %>
+        <%= entry.updated.strftime("%m/%d/%Y %I:%M%p")%>
+    <% end %>
+    </td>
+    <td><%= link_to raw('<i class="icon-pencil"></i>'), edit_feed_entry_path(entry.feed, entry) %></td>
+    <td><%= link_to raw('<i class="icon-remove"></i>'), feed_entry_path(entry.feed, entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+<% end %>
+
+</table>
+

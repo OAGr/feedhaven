@@ -1,0 +1,33 @@
+<div class="well">
+  <div class="row">
+    <div class="span7">
+      <img src="<%=@feed.icon%>" class="img-rounded pull-left" style="width:100px; margin-right:20px">
+      <h3><%= link_to @feed.title, @feed %> </h3>
+      <h4><%= @feed.subtitle %> </h4>
+    </div>
+
+    <div class="btn-toolbar" style="float:right">
+      <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i> <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li> <%= link_to raw('<i class="icon-reorder"></i>Info'), main_feed_path(@feed) %></li>
+          <li> <%= link_to raw('<i class="icon-pencil"></i>Edit'), edit_feed_path(@feed) %></li>
+        </ul>
+      </div><!-- /btn-group -->
+
+      <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-share-alt"></i> <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="icon-cog"></i>API</a></li>
+          <li class="divider"></li>
+          <li><%= link_to raw('<i class="icon-reorder"></i>Json'), feed_path(@feed, :format => :json) %></li>
+          <li><%= link_to raw('<i class="icon-rss"></i>Atom'), feed_path(@feed, :format => :atom) %></li>
+        </ul>
+      </div><!-- /btn-group -->
+
+      <%= link_to feed_path(@feed), :class => "btn btn-danger", :method => :delete, data: {confirm: "This will delete the entire feed.  Are you sure you want to do this?"} do %>
+        <i class="icon-remove"></i>
+    <% end %>
+    </div>
+  </div>
+</div>

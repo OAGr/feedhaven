@@ -1,0 +1,31 @@
+<div class="well">
+      <h3><%= link_to raw('<i class="icon-reply"></i>'), feed_path(@feed) %>
+  &nbsp;
+  &nbsp;&nbsp;<i class="icon-info-sign"></i>&nbsp;Entry Information 
+   <div class="btn-toolbar" style="float:right; margin:0px">
+      <div class="btn-group" style="margin-top:4px" >
+        <a class="btn tab-default" href="#blog" data-toggle="tab"><i class="icon-th-large"></i></a>
+        <a class="btn" href="#table" data-toggle="tab" ><i class="icon-table"></i></a>
+        <a class="btn" href="#serializable" data-toggle="tab">{ }</a>
+      </div>
+      <a class="btn" href="#edit" data-toggle="tab"><i class="icon-pencil"></i> Edit</a>
+    <%= link_to feed_entry_path(@entry.feed_id, @entry), :class => "btn btn-danger", :method => :delete, data: {confirm: "This will delete the entry.  Are you sure you want to do this?"} do %>
+        <i class="icon-remove"></i>
+    <% end %>
+    </div>
+</h3>
+  <div class="tab-content">
+    <div class="tab-pane" id="blog">
+      <%= render 'entries/element/blog.html.erb', :entry => @entry %>
+    </div>
+    <div class="tab-pane" id="serializable">
+      <%= @entry.to_json %>
+    </div>
+    <div class="tab-pane" id="table">
+      <%= render 'entries/element/table.html.erb' %>
+    </div>
+    <div class="tab-pane" id="edit">
+      <%= render 'entries/form.html.erb' %>
+    </div>
+  </div>
+</div>

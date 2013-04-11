@@ -1,0 +1,54 @@
+<h3> Overview </h3>
+<p> Liberation.io runs on a REST API with the two data types of Feeds and Entries. Each feed has many entries.  It's very simple.</p>
+<h3> REST Commands </h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Resource</th>
+      <th>Exaple URI</th>
+      <th>GET</th>
+      <th>PUT</th>
+      <th>POST</th>
+      <th>DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>  <i class="icon-folder-close"></i><i class="icon-reorder"></i></td>
+    <td>Feed Collection</td>
+    <td> /feeds.json </td>
+    <td> <strong>List</strong> the URIs and other details of all feeds.</td>
+    <td> X </td>
+    <td> <strong>Create</strong> a new feed.</td>
+    <td> X </td>
+  </tr> 
+  <tr>
+    <td> <i class="icon-folder-close"></i><i class="icon-circle"></i></td>
+    <td> Feed Element  </td>
+    <td> /feeds/7sdf7.json </td>
+    <td> <strong> Retrieve </strong> all metadata about the feed object</td>
+    <td> <strong> Replace </strong> the metadata about the feed object. </td>
+    <td> X </td>
+    <td> <strong> Delete </strong> the feed element. </td>
+  </tr> 
+  <tr>
+    <td> <i class="icon-file-alt"></i><i class="icon-reorder"></i></td>
+    <td>Entry Collection  </td>
+    <td> /feeds/7sdf7/entries.json </td>
+    <td> <strong> List </strong> the URIs and info on all entries for a specific feed.</td>
+    <td> <strong> X </strong> </td>
+    <td> <strong>Create</strong> a new entry.</td>
+    <td> <strong> X </strong> </td>
+  </tr> 
+  <tr>
+    <td><i class="icon-file-alt"></i><i class="icon-circle"></i></td>
+    <td> Entry Element  </td>
+    <td> /feeds/7sdf7/entries/23f2r.json </td>
+    <td> <strong> Retrieve </strong> all information about a specific entry. </td>
+    <td> <strong> Replace </strong> all information about the feed entry. </td>
+    <td> <strong> X </strong></td>
+    <td> <strong> Delete </strong> the entry. </td>
+  </tr> 
+  </tbody>
+</table>

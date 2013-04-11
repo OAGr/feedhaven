@@ -1,0 +1,32 @@
+<div class="well" style="padding-top:3px">
+  <h3>Entries
+    <div class="btn-toolbar" style="float:right; margin:0px">
+      <div class="btn-group" style="margin-top:4px" >
+        <a class="btn tab-default" href="#blog" data-toggle="tab"><i class="icon-th-large"></i></a>
+        <a class="btn" href="#standard" data-toggle="tab"><i class="icon-align-justify"></i></a>
+        <a class="btn" href="#list" data-toggle="tab"><i class="icon-columns"></i></a>
+        <a class="btn" href="#serializable" data-toggle="tab">{ }</a>
+      </div>
+      <%= link_to new_feed_entry_path(@feed), :class => "btn btn-success" do %>
+        <i class="icon-plus"></i> New
+    <% end %>
+    </div>
+  </h3>
+  <hr style="margin:4px 0 4px 0">
+
+  <div class="tab-content">
+
+    <div class="tab-pane" id="standard">
+      <%= render 'entries/collection/standard.html.erb' %>
+    </div>
+    <div class="tab-pane" id="serializable">
+      <%= render 'entries/collection/serializable.html.erb' %>
+    </div>
+    <div class="tab-pane" id="list">
+      <%= render 'entries/collection/list.html.erb' %>
+    </div>
+    <div class="tab-pane" id="blog">
+      <%= render 'entries/collection/blog.html.erb' %>
+    </div>
+  </div>
+</div>

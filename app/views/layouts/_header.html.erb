@@ -1,0 +1,20 @@
+<div class="navbar navbar-fixed-top" style="margin-bottom:50px;">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <%= link_to 'Feedhaven', home_path, :class => "brand" %>
+      <div class="container nav-collapse">
+        <ul class="nav">
+          <li><%= link_to raw('<i class="icon-cogs"></i> API'), api_path %></li>
+          <li><%= link_to raw('<i class="icon-cloud-download"></i> Import'), import_path %></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li><%= link_to raw('<i class="icon-cloud"></i> Feeds'), feeds_path %></li>
+          <li><%= link_to raw('<i class="icon-plus"></i> New'), new_feed_path %></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+

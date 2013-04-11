@@ -1,0 +1,24 @@
+<div class="well" style="position:fixed;padding:10px 0">
+  <ul class="nav nav-list" >
+
+    <li><%= link_to raw("<strong>Feed Collection</strong>"), api_path(:page => 'feedcollection') %></li>
+    <li><%= link_to 'GET', api_path(:page => 'feedcollection', :anchor =>'get') %> </li>
+    <li><%= link_to 'POST', api_path(:page => 'feedcollection', :anchor =>'post')  %> </li>
+    <li class="divider"></li>
+    <li><%= link_to raw("<strong>Feed Element</strong>"), api_path(:page => 'feedelement')  %> </li>
+    <li><%= link_to 'GET', api_path(:page => 'feedelement', :anchor =>'get')  %> </li>
+    <li><%= link_to 'PUT', api_path(:page => 'feedelement', :anchor =>'put')%> </li>
+    <li class="divider"></li>
+    <li><%= link_to raw("<strong>Entry Collection</strong>"), api_path(:page => 'entrycollection') %></li>
+    <li><%= link_to 'GET', api_path(:page => 'entrycollection', :anchor =>'get') %> </li>
+    <li><%= link_to 'PUT', api_path(:page => 'entrycollection', :anchor =>'put')%> </li>
+    <li><%= link_to 'POST', api_path(:page => 'entrycollection', :anchor =>'post')%> </li>
+    <li><%= link_to 'DELETE', api_path(:page => 'entrycollection', :anchor =>'delete') %> </li>
+    <li class="divider"></li>
+    <li><%= link_to raw("<strong>Entry Element</strong>"), api_path(:page => 'entryelement') %></li>
+    <li><%= link_to 'GET', api_path(:page => 'entryelement', :anchor =>'get') %> </li>
+    <li><%= link_to 'PUT', api_path(:page => 'entryelement', :anchor =>'put') %> </li>
+    <li><%= link_to 'DELETE', api_path(:page => 'entryelement', :anchor =>'delete') %> </li>
+  </ul>
+
+</div>

@@ -1,0 +1,86 @@
+<h2>REST API: Entry Collection</h2>
+<p> A Feed collection represents a list of a users' feeds.</p>
+
+<a name="uri"></a> 
+<h3>Collection URI </h3>
+<pre>$ <%=feeds_url%>.json</pre>
+<br>
+<a name="properties"></a> 
+<h3>Feed Properties (for each element in the collection) </h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>_id</td>
+    <td>The unique identifier for the object </td>
+  </tr>
+  <tr>
+    <td>Title (required) </td>
+    <td>The title of the feed in question. </td>
+  </tr>
+  <tr>
+    <td>Subtitle</td>
+    <td>Extra information about. </td>
+  </tr>
+  <tr>
+    <td>Source</td>
+    <td>A link of the website where the content is pulled from.  In the case where this is ambiguous, please provide a description.</td>
+  </tr>
+  <tr>
+    <td>Rights</td>
+    <td>The rights pertaining the public permission to use contents of this feed.</td>
+  </tr>
+  <tr>
+    <td>Tags</td>
+    <td>Feed Tags</td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td>Feed Categories</td>
+  </tr>
+  <tr>
+    <td>Icon</td>
+    <td>A URL to a picture used to describe this feed.  The picture should be at least 100x100px.</td>
+  </tr>
+  <tr>
+    <td>Updated (Not editable)</td>
+    <td>Most recent time when a feed collection / entry was edited, added, or deleted.  </td>
+  </tr>
+  <tr>
+    <td>Updated_at (Not editable)</td>
+    <td>Most recent time when the feed element itself was edited or created. </td>
+  </tr>
+  <tr>
+  <tr>
+    <td>Created_at (Not Editable)</td>
+    <td>The time when the feed element was created. </td>
+  </tr>
+  </tbody>
+</table>
+<a name="get"> </a>
+<h3>Get</h3>
+<p> Get the entire feed collection.  This will only get info on the feed collection, not the enries that belong to each feed.</p>
+<pre>$ curl -G <%=feeds_url%>.json</pre>
+
+<a name="post"> </a>
+<h3>Post </h3>
+<p> Create a new feed element.</p>
+<pre>$ curl -X PPOST <%=feeds_url%>.json -d "title=awesomefeed&rights=microsoft"  </pre>
+<div class="alert alert-error">
+  This is not actually working, probably should be. 
+</div>
+
+<a name="delete"> </a>
+<h3>Delete</h3>
+<p>Deletes all feeds in the feed collection.  </p>
+<pre>$ curl -X DELETE <%=feeds_url%>.json</pre>
+<div class="alert alert-error">
+  This is not actually working, probably should be. 
+</div>
+
+

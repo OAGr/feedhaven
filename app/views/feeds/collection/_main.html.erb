@@ -1,0 +1,39 @@
+<div class="well">
+  <h2>All Feeds
+    <div class="btn-toolbar" style="float:right; margin:0px">
+      <div class="btn-group" style="margin-top:4px" >
+        <a class="btn tab-default" href="#summary" data-toggle="tab" ><i class="icon-align-justify"></i></a>
+        <a class="btn" href="#table" data-toggle="tab" ><i class="icon-table"></i></a>
+        <a class="btn" href="#serializable" data-toggle="tab">{ }</a>
+      </div>
+      <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-share-alt"></i> <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="icon-cog"></i>API</a></li>
+          <li class="divider"></li>
+          <li><%= link_to raw('<i class="icon-reorder"></i>Json'), feeds_path(:format => :json) %></li>
+          <li><%= link_to raw('<i class="icon-rss"></i>Atom'), feed_path(@feeds.first, :format => :atom) %></li>
+        </ul>
+      </div><!-- /btn-group -->
+      <a class="btn btn-primary" href="#new" data-toggle="tab"><i class="icon-plus"></i>New</a>
+
+    </div>
+
+  </h2>
+  <div class="tab-content">
+    <div class="tab-pane active" id="summary">
+      <%= render 'feeds/collection/summary.html.erb'%>
+    </div>
+    <div class="tab-pane" id="table">
+      <%= render 'feeds/collection/table.html.erb' %>
+    </div>
+    <div class="tab-pane" id="serializable">
+      <%= render 'feeds/collection/serializable.html.erb' %>
+    </div>
+    <div class="tab-pane" id="edit">
+      <%= render 'feeds/collection/form.html.erb' %>
+    </div>
+  </div>
+</div>
+
+

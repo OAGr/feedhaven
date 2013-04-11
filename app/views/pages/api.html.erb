@@ -1,0 +1,47 @@
+<%= javascript_tag do %>
+  window.page = '<%= j @page %>';
+<% end %>
+<div class="row">
+
+  <div class="span9">
+    <h3>API Docs
+      <div class="btn-toolbar" style="float:right; margin:0px">
+        <div class="btn-group" style="margin-top:4px" >
+          <a class="btn tab-default" href="#overview" data-toggle="tab"><i class="icon-align-justify"></i> Overview</a>
+          <a class="btn" href="#feedcollection" data-toggle="tab" ><i class="icon-table"></i> Feed Collection</a>
+          <a class="btn" href="#feedelement" data-toggle="tab"><i class="icon-columns"></i> Feed Element</a>
+          <a class="btn" href="#entrycollection" data-toggle="tab">{ } Entry Collection</a>
+          <a class="btn" href="#entryelement" data-toggle="tab">{ } Entry Element</a>
+        </div>
+      </div>
+    </h3>
+    <hr style="margin:4px 0 4px 0">
+
+
+
+    <div class="tab-content">
+
+      <div class="tab-pane" id="overview">
+        <%= render 'pages/api/overview' %>
+      </div>
+      <div class="tab-pane" id="feedcollection">
+        <%= render 'pages/api/feedcollection' %>
+      </div>
+      <div class="tab-pane" id="feedelement">
+        <%= render 'pages/api/feedelement' %>
+      </div>
+      <div class="tab-pane" id="entrycollection">
+        <%= render 'pages/api/entrycollection' %>
+      </div>
+      <div class="tab-pane" id="entryelement">
+        <%= render 'pages/api/entryelement' %>
+      </div>
+    </div>
+
+  </div>
+  <div class="span3">
+    <%= render 'pages/api/nav' %>
+  </div>
+</div>
+
+

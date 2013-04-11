@@ -1,0 +1,75 @@
+<h3><i class="icon-globe"></i>  Feed Table </h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>_id</td>
+    <td><%= @feed.id %></td>
+  </tr>
+  <tr>
+    <td>Title (required) </td>
+    <td><%= @feed.title %></td>
+  </tr>
+  <tr>
+    <td>Subtitle</td>
+    <td><%= @feed.subtitle %></td>
+  </tr>
+  <tr>
+    <td>Source</td>
+    <td><%= @feed.source %></td>
+  </tr>
+  <tr>
+    <td>Rights</td>
+    <td><%= @feed.rights %></td>
+  </tr>
+  <tr>
+    <td>Tags</td>
+    <td><%= @feed.tags %></td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td><%= @feed.categories %></td>
+  </tr>
+  <tr>
+    <td>Icon</td>
+    <td><%= @feed.icon %></td>
+  </tr>
+  <tr>
+    <td>Updated (Not editable)</td>
+    <td><%= @feed.updated %></td>
+  </tr>
+  <tr>
+    <td>Updated_at (Not editable)</td>
+    <td><%= @feed.updated_at %></td>
+  </tr>
+  <tr>
+  <tr>
+    <td>Created_at (Not Editable)</td>
+    <td><%= @feed.created_at %></td>
+  </tr>
+  </tbody>
+</table>
+</br>
+<h3> <i class="icon-user"></i> Author Table </h3>
+<table class="table table-bordered">
+  <tr class="info">
+    <th>id</th>
+    <th>name</th>
+    <th>email</th>
+    <th>uri</th>
+
+  </tr>
+  <tr>
+    <td><%= @feed.author.id %> </td>
+    <td><%= @feed.author.name %> </td>
+    <td><%= @feed.author.email %> </td>
+    <td><%= @feed.author.uri %> </td>
+  </tr>
+</table>
+
+
