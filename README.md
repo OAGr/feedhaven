@@ -24,6 +24,15 @@ codebase is lacking in tests and polish.
 * SMSs
 * Chat messanges
 
+### Apps that can import data to Feedhaven
+Feedhaven has a very simple REST JSON API.  In order to import data to
+Feedhaven, first create a feed on Feedhaven, then post entries to that
+feed in the proper format.  Two existing applications that do that are:
+* [Huginn](https://github.com/cantino/huginn)
+* [Zapier](https://zapier.com/)
+We encourage you to either extend Huginn or write other apps to pull
+more data to Feedhaven.
+
 ### Feedhaven feeds export directly to
 * ATOM
 * JSON
