@@ -97,7 +97,22 @@ The main structure of Feedhaven encompasses feeds and entries.  One feed has man
               uri : Author Uri (if different from feed)  
               }  
 }
-  
+ 
+## API
+
+| Path                     | Method   | Description                    |
+| ------------------------ | :------: | ------------------------------ |
+| /feeds                   | GET      | List all feeds                 |
+| /feeds                   | POST     | Create a new feed              |
+| /feeds/:id               | GET      | Retrieve info on a feed object |
+| /feeds/:id               | PUT      | Replaces a feed object         |
+| /feeds/:id               | DELETE   | Removes a feed object          |
+| /feeds/:id/entries       | GET      | List all entries for a feed    |
+| /feeds/:id/entries       | POST     | Create a new entry for a feed  |
+| /verify/:id/entries/:id  | GET      | Retrieve info on an entry      |
+| /verify/:id/entries/:id  | PUT      | Replaces a entry object        |
+| /verify/:id/entries/:id  | DELETE   | Removes entry object           |
+ 
 
 ## License
 Feedhaven is provided under the MIT License.
