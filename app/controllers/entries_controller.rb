@@ -6,8 +6,7 @@ class EntriesController < ApplicationController
     @entries = @feed.entries
     respond_to do |format|
       format.html { render :layout => 'feed'}
-    
-      format.json { render json: @entries.order_by(:published.desc) }
+      format.json { render json: @entries.order_by(:published.desc), :root => false }
     end
   end
 
