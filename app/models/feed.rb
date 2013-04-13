@@ -10,9 +10,10 @@ class Feed
   field :categories, type: Hash
   field :icon, type: String
 
-  attr_accessible :title, :subtitle, :updated, :source, :rights, :tags, :categories, :icon, :author_attributes, :author
+  attr_accessible :title, :subtitle, :updated, :source, :rights, :tags, :categories, :icon, :author_attributes, :author, :user_id
   validates_presence_of :title
   has_many :entries
+  belongs_to :user
 
   embeds_one :author, autobuild: true
   accepts_nested_attributes_for :author

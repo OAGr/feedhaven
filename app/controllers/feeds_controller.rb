@@ -2,7 +2,8 @@ class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
   def index
-    @feeds = Feed.order_by(:updated.desc)
+    @user = current_user
+    @feeds = @user.feeds.order_by(:updated.desc)
     respond_to do |format|
       format.html {render :layout => 'standard'}
       format.json { render json: @feeds }
@@ -36,6 +37,7 @@ class FeedsController < ApplicationController
   # GET /feeds/new
   # GET /feeds/new.json
   def new
+    @user = current_user
     @feed = Feed.new
     @feed.build_author
     respond_to do |format|

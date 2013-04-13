@@ -9,8 +9,13 @@
           <li><%= link_to raw('<i class="icon-cloud-download"></i> Import'), import_path %></li>
         </ul>
         <ul class="nav pull-right">
-          <li><%= link_to raw('<i class="icon-cloud"></i> Feeds'), feeds_path %></li>
-          <li><%= link_to raw('<i class="icon-plus"></i> New'), new_feed_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to raw('<i class="icon-cloud"></i> Feeds'), feeds_path %></li>
+            <li><%= link_to raw('<i class="icon-plus"></i> New'), new_feed_path %></li>
+            <li><%= link_to raw('<i class="icon-user"></i> Logout'), destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+          <li> <%= link_to(raw('<i class="icon-user"></i>Login'), new_user_session_path) %> </li>
+        <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

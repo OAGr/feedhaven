@@ -1,11 +1,13 @@
 <ul class="nav nav-pills nav-stacked">
 
+  <% if current_user %>
   <li class="nav-header">Recent Feeds</li>
-  <% Feed.order_by(:updated.desc).limit(10).each do |feed| %>
+  <% current_user.feeds.order_by(:updated.desc).limit(10).each do |feed| %>
     <% active = (@feed && (feed.id == @feed.id)) ? 'active' : '.'%>
   <li class=<%= active %>>
   <%= link_to raw(feed.title.to_s), feed%>
   </li>
+<% end %>
 <% end %>
 </ul>
 
