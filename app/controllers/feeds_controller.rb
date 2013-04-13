@@ -6,7 +6,7 @@ class FeedsController < ApplicationController
     @feeds = @user.feeds.order_by(:updated.desc)
     respond_to do |format|
       format.html {render :layout => 'standard'}
-      format.json { render json: @feeds }
+      format.json { render json: @feeds.order_by(:updated_desc) }
     end
   end
 
@@ -16,6 +16,7 @@ class FeedsController < ApplicationController
     @feeds = Feed.order_by(:updated.desc).limit(10)
     @feed = Feed.find(params[:id])
     @entries = @feed.entries.order_by(:published.desc).limit(20)
+    @user = current_user if current_user
     respond_to do |format|
       format.html {render :layout => 'standard'}
       format.json { render json: @feed }

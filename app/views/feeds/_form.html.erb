@@ -38,14 +38,17 @@
     <div class="field">
       <%= f.label :icon %>
       <%= f.text_field :icon %>
-      <%= f.hidden_field :user_id, :value => @user.id %>
     </div>
+      <% if @user %>
+      <%= f.hidden_field :user_id, :value => @user.id %>
+    <% end %>
   </div>
   <div class="span4">
     <h4>Feed Author Information</h4>
     <%= f.fields_for @feed.author do |p| %>
       <div class="field">
       <%= p.label :name %>
+      <%= p.text_field :name %>
     </div>
     <div class="field">
       <%= p.label :email %>
