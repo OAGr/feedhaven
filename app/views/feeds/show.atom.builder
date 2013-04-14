@@ -1,5 +1,5 @@
 atom_feed :language => "en-US" do |feed|
-  %w(title subtitle updated rights icon source subtitle tags).each do |field|
+  %w(title subtitle updated rights icon subtitle tags).each do |field|
     if (@feed.send(field) != '')
       feed.send(field, @feed.send(field))
     end
@@ -11,7 +11,7 @@ atom_feed :language => "en-US" do |feed|
       author.uri @feed.author.uri if @feed.author.name
     end
   end
-  @feed.entries.each do |feed_entry|
+  @entries.each do |feed_entry|
     feed.entry(feed_entry, :url => feed_entry_url(feed_entry.feed_id, feed_entry.id)) do |entry|
       %w(title updated summary updated content).each do |field|
         if (feed_entry.send(field) != '')
