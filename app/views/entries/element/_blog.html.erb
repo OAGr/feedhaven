@@ -21,18 +21,13 @@
     </div>
   </div>
 </div>
+<% if entry.content %>
 <div class="row">
-  <div class="span7">
+  <div class="span9">
     <p><%= simple_format(auto_link(entry.content)) %><p>
   </div>
-  <div class="span2">
-    <% if (entry.author.name || entry.author.email || entry.author.uri) %>
-      <strong><%= entry.author.name %></strong>
-    <strong><%= simple_format(auto_link(entry.author.email)) if (entry.author.email && !entry.author.email.empty?)%></strong>
-    <strong><%= simple_format(", #{auto_link(entry.author.uri)}") if entry.author.uri %></strong>
-  <%end%>
   </div>
-</div>
 <br>
+<% end %>
 <hr style="margin:8px 0px">
 

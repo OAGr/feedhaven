@@ -14,6 +14,7 @@ Feeds::Application.routes.draw do
   get "/api" => "pages#api"
   get "/import" => "pages#import"
   get "/home" => "pages#home"
+  get "/icons" => "pages#icons"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

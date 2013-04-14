@@ -1,0 +1,19 @@
+<div class="row">
+  <% @files = Dir.glob("./app/assets/images/icons/*.png").map{|file| (file.match /icons\/(.*)/)[1] } %>
+  <% num_in_group = 4 %>
+  <% groups = @files.in_groups_of(num_in_group) %>
+</div>
+<% groups.each do |group| %>
+  <div class="row" style="margin-top:20px">
+  <% group.each do |i| %>
+    <% if !i.nil? %>
+    <div class="span3">
+    <%= image_tag "/assets/icons/#{i}",:style => " max-height:50px; max-width:50px;" %>
+    <% asset = asset_path("/assets/icons/#{i}") %>
+    <%= "#{request.protocol}#{request.host_with_port}#{asset}" %>
+  </div>
+<% end %>
+<% end %>
+</div>
+<% end %>
+</div>

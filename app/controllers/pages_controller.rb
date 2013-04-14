@@ -11,4 +11,8 @@ class PagesController < ApplicationController
 
   def import
   end
+
+  def icons
+  end
+
 end
