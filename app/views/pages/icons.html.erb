@@ -1,5 +1,5 @@
 <div class="row">
-  <% @files = Dir.glob("./app/assets/images/icons/*.png").map{|file| (file.match /icons\/(.*)/)[1] } %>
+  <% @files = Dir.glob("./app/assets/images/icons/*.png").map{|file| (file.match /icons\/(.*)/)[1] }.sort %>
   <% num_in_group = 4 %>
   <% groups = @files.in_groups_of(num_in_group) %>
 </div>
