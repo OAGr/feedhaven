@@ -1,29 +1,35 @@
-<table class="table table-bordered">
+<table class="table ">
   <thead>
-  <tr>
-    <th>title</th>
-    <th>subtitle</th>
-    <th>item</th>
-    <th>edit</th>
-    <th>destroy</th>
-    <th>entries</th>
-  </tr>
-</thead>
-<tbody>
+    <tr>
+      <th>logo</th>
+      <th>entries</th>
+      <th>title</th>
+      <th>subtitle</th>
+      <th>recent entry </th>
+      <th>edit</th>
+      <th>destroy</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @feeds.each do |feed| %>
     <tr>
+    <td style="text-align:center">
+      <% unless feed.icon.empty? %>
+        <%= image_tag feed.icon, :style => "max-height:24px; max-width:30px"%>
+    <% end %>
+    </td>
+      <td><%= feed.entries.count %></td>
     <td><%= link_to feed.title, feed %></td>
     <td><%= feed.subtitle%></td>
-    <td><%= link_to raw('<i class="icon-globe"></i>'), feed %></td>
+    <td><%= distance_of_time_in_words(Time.now - feed.updated) %></td>
     <td><%= link_to raw('<i class="icon-pencil"></i>'), edit_feed_path(feed) %></td>
-  <td><%= link_to raw('<i class="icon-remove"></i>'), feed, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    <td><%= feed.entries.count %></td>
-    
-  </tr>
-<% end %>
-</tbody>
+    <td><%= link_to raw('<i class="icon-remove"></i>'), feed, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 
-</table>
+    </tr>
+  <% end %>
+    </tbody>
 
-<br />
+  </table>
+
+  <br />
 
