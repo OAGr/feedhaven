@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Feedhaven by OAGr</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Feedhaven</h1>
+        <p>A feed management system</p>
+
+        <p class="view"><a href="https://github.com/OAGr/feedhaven">View the Project on GitHub <small>OAGr/feedhaven</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/OAGr/feedhaven/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/OAGr/feedhaven/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/OAGr/feedhaven">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Feedhaven.  Liberate your data.</h1>
+
+<p>Most online data is behind the walls of big applications that don't play
+well with others.  Use Feedhaven to take your data and store it in a way
+that's completely accessible to you.  </p>
+
+<p><img src="doc/images/haven6.jpg" alt="revolution"></p>
+
+<h2>What is Feedhaven?</h2>
+
+<p>Feedhaven is a platform for storing and editing data in a generalized feed format.  Feedhaven is meant to be used in combination with other tools to import and export data from other applicaitons.  We suggest that you use Feedhaven to store most data that you care about on the internet, in order to keep forever and use easily for any purpose you choose.  </p>
+
+<h3>Screenshot (Feed page)</h3>
+
+<p><img src="doc/images/screenshot-feed.png" alt="screenshot"></p>
+
+<p>Feedhaven is currently in development mode and has not yet reached
+alpha.  We encourage you to take a look, but keep in mind that the
+codebase is lacking in tests and polish.</p>
+
+<h3>Recommended feeds to import to Feedhaven</h3>
+
+<ul>
+<li>Emails</li>
+<li>RSS Feeds</li>
+<li>Social Feeds (Facebook, Twitter, LinkedIn)</li>
+<li>Rescuetime data</li>
+<li>SMSs</li>
+<li>Chat messanges</li>
+</ul><h3>Apps that can import data to Feedhaven</h3>
+
+<p>Feedhaven has a very simple REST JSON API.  In order to import data to
+Feedhaven, first create a feed on Feedhaven, then post entries to that
+feed in the proper format.  Two existing applications that can do that are:</p>
+
+<ul>
+<li><a href="https://github.com/cantino/huginn">Huginn</a></li>
+<li>
+<a href="https://zapier.com/">Zapier</a><br>
+</li>
+</ul><p>We encourage you to either extend Huginn or write other apps to pull
+more data to Feedhaven.</p>
+
+<h3>Feedhaven feeds export directly to</h3>
+
+<ul>
+<li>ATOM</li>
+<li>JSON</li>
+</ul><h2>Getting Started</h2>
+
+<p>Feedhaven was made to work easily with Heroku.  It does requre a MongoDB
+database.  We recommend MongoHQ or Mongolab to assist with providing a
+hosted MongoDB database.  Both provide free storage for up to 500MB of
+data.</p>
+
+<h3>MongoDB with MongoHQ</h3>
+
+<p>If you sign up for MongoHQ with heroku, linking them is easy.  Just set the relevent ENV to
+the uri mongodb://{username}:{password}@linus.mongohq.com:{port}/app{app
+ID}</p>
+
+<h3>Hosted Version</h3>
+
+<p>We are working to provide a paid hosted version directly through
+FeedHaven shortly.</p>
+
+<h2>Project Status</h2>
+
+<p>Feedhaven is still in early development.  We expect to reach alpha in the next
+few weeks.  So far the code is functional for importing, holding, and
+accessing data.  However, there are still no tests, no user
+administration, and no data security layers.  Consider the project very
+early stage.</p>
+
+<h2>Feedhaven data structure</h2>
+
+<p>The main structure of Feedhaven encompasses feeds and entries.  One feed has many entries, and each entry belongs to one feed.  All data is stored on MongoDB.</p>
+
+<h3>Feed</h3>
+
+<p>{ id (generated) : The unique identifier for the object<br>
+    Title (required) : The title of the feed<br>
+    Subtitle : Extra information about the feed<br>
+    Source : A link of the website where the content is pulled from. In the case where this is ambiguous, please provide a description<br>
+    Rights : The rights pertaining the public permission to use contents of this feed 
+    Tags : Tags for the feed<br>
+    Categories : Categories hash<br>
+    Icon : A URL to a picture used to describe this feed. The picture should be at least 100x100px, preferable square<br>
+    Updated (not editable) : Most recent time when a feed collection / entry was edited, added, or deleted<br>
+    Updated_at (Not editable) : Most recent time when the feed element itself was edited or created<br>
+    Created_at (Not Editable) : The time when the feed element was created<br>
+    Dump : A hash for any additional key values<br>
+    author :<br>
+              { name : Author Name<br>
+                email : Author Email<br>
+                uri : Author Uri<br>
+                }<br>
+  }</p>
+
+<h3>Entry</h3>
+
+<p>{ id (generated) : The unique identifier for the object<br>
+    Title (required) : The title of the feed<br>
+    Summary : Extra information about the feed<br>
+    Link : A revelant link or link to the original content<br>
+    Published : The time the entry was published<br>
+    Updated : The time the entry was most recently edited<br>
+    Dump : A hash with any additional key values<br>
+    author :<br>
+              { name : Author Name (if different from feed)<br>
+                email : Author Email (if different from feed)<br>
+                uri : Author Uri (if different from feed)<br>
+                }<br>
+  }</p>
+
+<h2>API</h2>
+
+<table>
+<tr>
+<th>Path</th>
+<th align="center">Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>/feeds</td>
+<td align="center">GET</td>
+<td>List all feeds</td>
+</tr>
+<tr>
+<td>/feeds</td>
+<td align="center">POST</td>
+<td>Create a new feed</td>
+</tr>
+<tr>
+<td>/feeds/:id</td>
+<td align="center">GET</td>
+<td>Retrieve info on a feed object</td>
+</tr>
+<tr>
+<td>/feeds/:id</td>
+<td align="center">PUT</td>
+<td>Replaces a feed object</td>
+</tr>
+<tr>
+<td>/feeds/:id</td>
+<td align="center">DELETE</td>
+<td>Removes a feed object</td>
+</tr>
+<tr>
+<td>/feeds/:id/entries</td>
+<td align="center">GET</td>
+<td>List all entries for a feed</td>
+</tr>
+<tr>
+<td>/feeds/:id/entries</td>
+<td align="center">POST</td>
+<td>Create a new entry for a feed</td>
+</tr>
+<tr>
+<td>/verify/:id/entries/:id</td>
+<td align="center">GET</td>
+<td>Retrieve info on an entry</td>
+</tr>
+<tr>
+<td>/verify/:id/entries/:id</td>
+<td align="center">PUT</td>
+<td>Replaces a entry object</td>
+</tr>
+<tr>
+<td>/verify/:id/entries/:id</td>
+<td align="center">DELETE</td>
+<td>Removes entry object</td>
+</tr>
+</table><h2>License</h2>
+
+<p>Feedhaven is provided under the MIT License.</p>
+
+<p><a href="https://travis-ci.org/OAGr/feedhaven"><img src="https://travis-ci.org/OAGr/feedhaven.png" alt="Build Status"></a></p>
+
+<p><a href="https://gemnasium.com/OAGr/feedhaven"><img src="https://gemnasium.com/OAGr/feedhaven.png" alt="Dependency Status"></a></p>
+
+<p><a href="https://codeclimate.com/github/OAGr/feedhaven"><img src="https://codeclimate.com/github/OAGr/feedhaven.png" alt="Code Climate"></a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/OAGr">OAGr</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
