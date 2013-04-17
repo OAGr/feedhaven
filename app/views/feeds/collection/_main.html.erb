@@ -7,7 +7,9 @@
         <a class="btn" href="#serializable" data-toggle="tab">{ }</a>
       </div>
       <div class="btn-group">
-      <a class="btn btn-primary" href="#new" data-toggle="tab"><i class="icon-plus"></i>New</a>
+      <%= link_to new_feed_path, :class => "btn btn-primary" do %>
+        <i class="icon-plus"></i> New
+    <% end %>
     </div>
 
     </div>
