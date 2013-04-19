@@ -5,7 +5,7 @@
       <div class="container nav-collapse">
         <ul class="nav">
           <li><%= link_to raw('<i class="icon-cogs"></i> API'), api_path %></li>
-          <li><%= link_to raw('<i class="icon-cloud-download"></i> Import'), import_path %></li>
+          <li><a href="http://feedhaven.org/warnings"> <i class="icon-remove-sign"></i>Warnings </a></li>
         </ul>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
