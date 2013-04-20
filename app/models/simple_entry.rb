@@ -61,11 +61,8 @@ class SimpleEntry
 
   def clean_dump(params)
     dump = params['dump'] || params['Dump']
-    case 
-    when dump.nil?
+    if dump.nil?
       dump = {}
-    when dump.class != Hash
-      dump = {'extra' => dump}
     end
     dump
   end
