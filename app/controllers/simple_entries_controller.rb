@@ -6,7 +6,6 @@ class SimpleEntriesController < ApplicationController
     @feed = Feed.find(params[:feed_id])
     @simple_entry = SimpleEntry.new(params[:simple_entry])
     @entry = @feed.entries.new(@simple_entry.params)
-
     respond_to do |format|
       if @entry.save
         @entry.author.save

@@ -64,9 +64,8 @@ class SimpleEntry
     case 
     when dump.nil?
       dump = {}
-    #This was here for trial, but seems to be a bad idea
-    #when dump.class != Hash
-    #  dump = {'extra' => dump}
+    when dump.class != Hash
+      dump = {'extra' => dump}
     end
     dump
   end
