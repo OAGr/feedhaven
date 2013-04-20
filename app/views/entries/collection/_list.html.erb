@@ -22,7 +22,7 @@
     <% entry.dump.each_pair do |key,value| %>
       <tr>
       <td> <strong> <%= key %> </strong> </td>
-      <td> <%= simple_format(value) %> </td>
+      <td> <%= raw(value) %> </td>
     </tr>
   <% end %>
   </table>
