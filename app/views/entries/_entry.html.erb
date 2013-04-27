@@ -3,7 +3,7 @@
     <strong><%= auto_link(simple_format(entry.title)) %></strong>
   </div>
   <div class="span1">
-    <%= distance_of_time_in_words(Time.now - entry.published) %>
+    <%= distance_of_time_in_words((Time.now - entry.published).to_i) %>
   </div>
   <div class="btn-toolbar" style="float:right; margin:0px">
     <div class="btn-group">

@@ -5,7 +5,7 @@
     <% if entry.link %> <h6>link: <%= auto_link(simple_format(entry.link)) %></h6><%end%>
   </div>
   <div class="span2">
-    <%= distance_of_time_in_words(Time.now - entry.published) %>
+    <%= distance_of_time_in_words((Time.now - entry.published).to_i) %>
   </div>
   <div class="btn-toolbar" style="float:right; margin:0px">
     <div class="btn-group">
